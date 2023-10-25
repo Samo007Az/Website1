@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Add user-scalable=no to disable zooming and panning -->
+  <style>
+    body {
+      background-color: white;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 5s;
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      margin: 100px;
+    }
+
+    #add-my-repo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #sileo-button, #cydia-button {
+      display: inline-block;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    #sileo-button {
+      background-color: #00755E;
+      color: #fff;
+    }
+
+    #cydia-button {
+      background-color: #4B3621;
+      color: #fff;
+    }
+
+    #sileo-button:hover, #cydia-button:hover {
+      opacity: 0.8;
+      box-shadow: 0 0 20px rgba(0, 117, 94, 0.7);
+      transform: scale(1.1);
+    }
+
+    footer {
+      transition: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="add-my-repo">𝔸𝕕𝕕 𝕄𝕪 ℝ𝕖𝕡𝕠</div>
+    <a href="sileo://source/https://samodev7771.yourepo.com/" id="sileo-button">Sileo</a>
+    <a href="https://cydia.saurik.com/api/share#?source=https://samodev7771.yourepo.com/" id="cydia-button">Cydia</a>
+  </div>
+
+  <footer>
+    <p3>𝐒𝐚𝐦𝐨𝐃𝐞𝐯 𝟐𝟎𝟐𝟑</p3></p>
+  </footer>
+
+  <script>
+    window.addEventListener("load", function() {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>
