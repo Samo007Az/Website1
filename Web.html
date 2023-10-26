@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> <!-- Add user-scalable=no to disable zooming and panning -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style>
     body {
       background-color: white;
@@ -14,6 +14,7 @@
 
     #container {
       margin: 100px;
+      position: relative;
     }
 
     #add-my-repo {
@@ -52,23 +53,130 @@
 
     footer {
       transition: none;
+      margin-top: 20px;
     }
+
+    /* Style for the repo link and copy button */
+    #repo-link-container {
+      margin-top: 20px;
+    }
+
+    #repo-link {
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      padding: 10px;
+      width: 80%;
+    }
+
+    #copy-button {
+      background-color: #00755E;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+
+    /* Style for the "?" button */
+    #rounded-button {
+      background-color: #00755E;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 10px 15px;
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      font-size: 18px;
+    }
+
+    /* Style for the text layer */
+#text-layer {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9); /* Adjust the alpha value to make it darker */
+  color: #fff;
+  border-radius: 30px;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+    /* Style for the OK button */
+    #ok-button {
+      background-color: #00755E;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    
+        /* Style for the "Needed To Read" text */
+    #needed-to-read {
+      position: absolute;
+      top: 35px; /* Adjust the top position as needed */
+      right: 80px; /* Adjust the right position as needed */
+      font-size: 12px;
+    }
+
   </style>
 </head>
 <body>
   <div id="container">
-    <div id="add-my-repo">𝔸𝕕𝕕 𝕄𝕪 ℝ𝕖𝕡𝕠</div>
+    <div id="add-my-repo">𝔸𝕕𝕕 𝕄y ℝ𝕖𝕡𝕠</div>
     <a href="sileo://source/https://samodev7771.yourepo.com/" id="sileo-button">Sileo</a>
     <a href="https://cydia.saurik.com/api/share#?source=https://samodev7771.yourepo.com/" id="cydia-button">Cydia</a>
+    
+    <!-- Add a div for the link and copy button -->
+    <div id="repo-link-container">
+      <input type="text" value="https://samodev7771.yourepo.com/" id="repo-link" readonly>
+      <button id="copy-button">Copy Link</button>
+    </div>
+    
+    <!-- "?" button in the top-right corner -->
+    <button id="rounded-button">?</button>
+    
+    <!-- Text layer -->
+    <div id="text-layer">
+      <p>This is my first repo, and if you see that there are many games that have been hacked or cracked by other developers like TheArmKing and others. Please note that posting them on Sileo/Cydia/Installer and more does not mean that I am stealing them. I am simply trying to make it easier for jailbroken users to access them. If this raises concerns for developers, we can take measures for this repo. Thanks for everything.</p>
+      <!-- OK button to close the layer -->
+      <button id="ok-button">OK</button>
+    </div>
+  </div>
+  
+      <!-- "Needed To Read" text -->
+    <div id="needed-to-read">Please Read this first→</div>
   </div>
 
   <footer>
-    <p3>𝐒𝐚𝐦𝐨𝐃𝐞𝐯 𝟐𝟎𝟐𝟑</p3></p>
+    <p>𝐒𝐚𝐦𝐨𝐃𝐞𝐯 𝟐𝟎𝟐𝟑</p>
   </footer>
 
   <script>
     window.addEventListener("load", function() {
       document.body.style.opacity = 1;
+
+      // Get the elements for the "?" button, text layer, and OK button
+      const roundedButton = document.getElementById("rounded-button");
+      const textLayer = document.getElementById("text-layer");
+      const okButton = document.getElementById("ok-button");
+
+      // Add a click event listener to the "?" button
+      roundedButton.addEventListener("click", function() {
+        // Show the text layer
+        textLayer.style.display = "block";
+      });
+
+      // Add a click event listener to the OK button to hide the text layer
+      okButton.addEventListener("click", function() {
+        textLayer.style.display = "none";
+      });
     });
   </script>
 </body>
