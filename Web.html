@@ -177,6 +177,25 @@
       okButton.addEventListener("click", function() {
         textLayer.style.display = "none";
       });
+      // Get the elements for the copy button and repo link
+const copyButton = document.getElementById("copy-button");
+const repoLink = document.getElementById("repo-link");
+
+// Add a click event listener to the copy button
+copyButton.addEventListener("click", function() {
+  // Create a textarea element to copy the text
+  const textArea = document.createElement("textarea");
+  textArea.value = repoLink.value;
+  document.body.appendChild(textArea);
+  textArea.select();
+
+  // Use the Clipboard API to copy the text
+  document.execCommand('copy');
+
+  // Remove the temporary textarea
+  document.body.removeChild(textArea);
+});
+
     });
   </script>
 </body>
